@@ -5,5 +5,5 @@
  * Date: 17.02.17
  * Time: 16:21
  */
-echo "if-Abfragen" . "noch ok!";
+echo "if-Abfragen" . " noch ok!";
 ?>
