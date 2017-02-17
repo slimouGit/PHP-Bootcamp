@@ -14,5 +14,6 @@ $bmi = ($gewicht / ($groesse*$groesse));
 
 echo $bmi;
 
+
 ?>
 
