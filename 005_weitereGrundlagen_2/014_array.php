@@ -26,4 +26,11 @@ var_dump(array_pop($warenkorb));
 echo "<br/>";
 var_dump($warenkorb);
 
+$anzahl = count($warenkorb);
+for($x = 0; $x < $anzahl; $x++){
+    echo "<li>";
+    echo $warenkorb[$x];
+    echo "</li>";
+}
+
 ?>
