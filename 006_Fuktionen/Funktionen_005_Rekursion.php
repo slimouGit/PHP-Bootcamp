@@ -24,7 +24,6 @@ function summe($x){
     }
     var_dump($x);
     return summe($x - 1)+$x;
-    var_dump($x);
 }
 
 
