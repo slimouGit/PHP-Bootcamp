@@ -14,4 +14,10 @@ class Car implements DriveInterface
   {
     return "Ein Auto faehrt mit {$this->ps} PS in {$location}";
   }
+
+  public function colorize($color)
+  {
+      // TODO: Implement colorize() method.
+      return "Das Auto ist {$this->$color}";
+  }
 }

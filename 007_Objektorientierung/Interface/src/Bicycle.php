@@ -7,6 +7,12 @@ class Bicycle implements DriveInterface
     return "Ein Fahrrad faehrt in {$location}";
   }
 
+    public function colorize($color)
+    {
+        // TODO: Implement colorize() method.
+        return "Das Fahrrad ist {$this->$color}";
+    }
+
 }
 
  ?>
