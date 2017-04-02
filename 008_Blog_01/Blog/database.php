@@ -2,7 +2,10 @@
 $pdo = new PDO(
   'mysql:host=localhost;dbname=blog;charset=utf8',
   'blog',
-  'UynwcNbiXOMNwM1c'
+    //mac
+  //'UynwcNbiXOMNwM1c'
+    //pc
+    'kYhhiQoF5OWpQNSQ'
 );
 $pdo->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
