@@ -1,21 +1,22 @@
-<?php include("../database.php"); ?>
+<?php include("../init.php"); ?>
 <?php include("elements/header.php"); ?>
 
-    <h1>Startseite des Blogs</h1>
-    <p class="lead">Das hier ist die Startseite des Blogs.</p>
+<h1>Startseite des Blogs</h1>
+<p class="lead">Das hier ist die Startseite des Blogs.</p>
 
 <?php
-$res = fetch_posts();
+  $postsRepsitory = new App\Post\PostsRepository();
+  $res = $postsRepsitory->fetchPosts();
 ?>
 
-    <ul>
-        <?php foreach ($res AS $row): ?>
-            <li>
-                <a href="post.php?id=<?php echo $row["id"]; ?>">
-                    <?php echo $row["title"]; ?>
-                </a>
-            </li>
-        <?php endforeach; ?>
-    </ul>
+<ul>
+  <?php foreach ($res AS $row): ?>
+    <li>
+      <a href="post.php?id=<?php echo $row["id"]; ?>">
+        <?php echo $row["title"]; ?>
+      </a>
+    </li>
+  <?php endforeach; ?>
+</ul>
 
 <?php include("elements/footer.php"); ?>
