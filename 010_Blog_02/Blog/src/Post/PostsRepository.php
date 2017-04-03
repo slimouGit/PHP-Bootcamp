@@ -1,21 +1,36 @@
 <?php
 namespace App\Post;
 
+use PDO;
+
 class PostsRepository
 {
 
-  function fetchPosts()
+  private $pdo;
+
+  public function __construct(PDO $pdo)
   {
-     global $pdo;
-     return $pdo->query("SELECT * FROM `posts`");
+    $this->pdo = $pdo;
+  }
+
+    function fetchPosts()
+  {
+     $stmt = $this->pdo->query("SELECT * FROM `posts`");
+
+     $posts = $stmt->fetchAll(PDO::FETCH_CLASS, "\\App\\Post\\PostModel");
+     return $posts;
   }
 
   function fetchPost($id)
   {
     global $pdo;
-    $stmt = $pdo->prepare("SELECT * FROM `posts` WHERE id = :id");
+    $stmt = $this->pdo->prepare("SELECT * FROM `posts` WHERE id = :id");
     $stmt->execute(['id' => $id]);
-    return $stmt->fetch();
+    $stmt->setFetchMode(PDO::FETCH_CLASS, "\\App\\Post\\PostModel");
+    $post = $stmt->fetch(PDO::FETCH_CLASS);
+
+    var_dump($post);
+    return $post;
   }
 }
 
