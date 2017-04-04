@@ -1,12 +1,20 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: salimoussayfi
- * Date: 03.04.17
- * Time: 16:48
- */
-class closures
-{
 
-}
+$test = function() {
+    var_dump("test()");
+};
+
+$test();
+
+unset($test);
+
+$test = function() {
+    var_dump("test() neu");
+};
+
+$test();
+
+var_dump($test);
+
+?>
