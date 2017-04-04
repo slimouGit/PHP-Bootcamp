@@ -29,7 +29,7 @@ class PostsRepository
     $stmt->setFetchMode(PDO::FETCH_CLASS, "\\App\\Post\\PostModel");
     $post = $stmt->fetch(PDO::FETCH_CLASS);
 
-    var_dump($post);
+    //var_dump($post);
     return $post;
   }
 }
